@@ -14,12 +14,23 @@
 	
 package co.com.sbaqueroadev.cyxtera.model;
 
+import co.com.sbaqueroadev.cyxtera.exceptions.OperandsException;
+import co.com.sbaqueroadev.cyxtera.model.implementation.Calculation;
 import co.com.sbaqueroadev.cyxtera.model.implementation.Role;
+import co.com.sbaqueroadev.cyxtera.model.implementation.SessionCalculation;
+import co.com.sbaqueroadev.cyxtera.model.implementation.SessionCalculationData;
 
 /*
 * @author: gasdsba - sbaqueroa@gmail.com
-* TeacherInterface:  
+* SessionCalculationInterface:
 */
-public interface RoleInterface {
-	public Role findByName(String name);
+public interface SessionCalculationInterface {
+
+	SessionCalculation addCalculation(SessionCalculation sessionCalculation, Calculation calculation);
+
+	SessionCalculation insert(SessionCalculation sessionCalculation);
+
+	Integer calculateResult(SessionCalculation sessionCalculation) throws OperandsException;
+
+	void update(SessionCalculationData sessionData);
 }

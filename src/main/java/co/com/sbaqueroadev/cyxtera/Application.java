@@ -14,9 +14,9 @@ public class Application {
 		SpringApplication.run(co.com.sbaqueroadev.cyxtera.Application.class, args);
 	}
 
-	/*@Bean
+	@Bean
 	public BCryptPasswordEncoder bCryptPasswordEncoder() {
 		return new BCryptPasswordEncoder();
-	}*/
+	}
 
 }

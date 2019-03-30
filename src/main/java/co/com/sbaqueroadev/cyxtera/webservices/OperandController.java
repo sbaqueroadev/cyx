@@ -4,12 +4,14 @@ import co.com.sbaqueroadev.cyxtera.model.implementation.*;
 import co.com.sbaqueroadev.cyxtera.services.CalculationService;
 import co.com.sbaqueroadev.cyxtera.services.SessionCalculationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @Controller
+@Scope("session")
 public class OperandController {
 
     @Autowired

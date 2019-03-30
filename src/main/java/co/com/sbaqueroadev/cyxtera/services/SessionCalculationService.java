@@ -15,31 +15,16 @@
 package co.com.sbaqueroadev.cyxtera.services;
 
 import co.com.sbaqueroadev.cyxtera.dao.SessionCalculationRepository;
-import co.com.sbaqueroadev.cyxtera.dto.MeasureAllDay;
-import co.com.sbaqueroadev.cyxtera.dto.MeasureAverage;
-import co.com.sbaqueroadev.cyxtera.dto.MeasureAverageDay;
 import co.com.sbaqueroadev.cyxtera.exceptions.OperandsException;
 import co.com.sbaqueroadev.cyxtera.model.SessionCalculationInterface;
 import co.com.sbaqueroadev.cyxtera.model.implementation.Calculation;
 import co.com.sbaqueroadev.cyxtera.model.implementation.SessionCalculation;
 import co.com.sbaqueroadev.cyxtera.model.implementation.SessionCalculationData;
-import com.mongodb.BasicDBObject;
-import com.mongodb.DBRef;
-import org.bson.Document;
-import org.bson.types.ObjectId;
-import org.json.JSONArray;
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.aggregation.*;
-import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.stereotype.Service;
 
-import java.text.SimpleDateFormat;
-import java.util.*;
-
-import static org.springframework.data.mongodb.core.aggregation.Aggregation.*;
+import java.util.List;
 
 /*
  * @author: gasdsba - sbaqueroa@gmail.com

@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "cyxtera.heroku",
+    "type": "java.lang.String",
+    "description": "Set 'true' if running on heroku"
+  },
+  {
+    "name": "cyxtera.googleCloud",
+    "type": "java.lang.String",
+    "description": "Set 'true' if running on Google Cloud"
+  }
+]}

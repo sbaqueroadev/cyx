@@ -4,6 +4,8 @@ import co.com.sbaqueroadev.cyxtera.security.CustomAccessDeniedHandler;
 import co.com.sbaqueroadev.cyxtera.security.CustomAuthenticationFailureHandler;
 import co.com.sbaqueroadev.cyxtera.security.CustomLoginSuccessHandler;
 import co.com.sbaqueroadev.cyxtera.services.UserDetailsServiceImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,6 +21,9 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+
+	private static final Logger logger = LoggerFactory.getLogger(WebSecurityConfig.class);
+
 	private UserDetailsServiceImpl userDetailsService;
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 	private CustomAuthenticationFailureHandler authenticationFailureHandler =
@@ -36,6 +41,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
+		logger.info("Configuration of web security: ");
 		http.cors().and().csrf().disable().authorizeRequests().anyRequest().permitAll().and().anonymous();
 		/*http.cors().and().csrf().disable().authorizeRequests()//.anyRequest().authenticated()
 		/*.antMatchers(HttpMethod.GET,"/error"

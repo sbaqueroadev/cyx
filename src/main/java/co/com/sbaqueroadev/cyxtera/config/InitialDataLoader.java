@@ -9,6 +9,8 @@ import co.com.sbaqueroadev.cyxtera.model.implementation.Privilege;
 import co.com.sbaqueroadev.cyxtera.model.implementation.Privilege.Privileges;
 import co.com.sbaqueroadev.cyxtera.model.implementation.Role;
 import co.com.sbaqueroadev.cyxtera.model.implementation.Role.Roles;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -21,7 +23,11 @@ import java.util.Arrays;
 @Component
 public class InitialDataLoader implements ApplicationListener<ContextRefreshedEvent> {
 
-	boolean alreadySetup = false;
+
+	private static final Logger logger = LoggerFactory.getLogger(InitialDataLoader.class);
+
+
+	private boolean alreadySetup = false;
 
 	@Autowired
 	private ApplicationUserRepository applicationUserRepository;
@@ -39,7 +45,7 @@ public class InitialDataLoader implements ApplicationListener<ContextRefreshedEv
 	@Override
 	@Transactional
 	public void onApplicationEvent(ContextRefreshedEvent event) {
-
+		logger.info("Setting Initial Testing purpose data.");
 		if (alreadySetup)
 			return;
 		

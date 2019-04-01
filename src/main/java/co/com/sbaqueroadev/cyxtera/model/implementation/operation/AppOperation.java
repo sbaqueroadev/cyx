@@ -19,6 +19,10 @@ public abstract class AppOperation{
 
     private String name;
 
+    public String getName() {
+        return name;
+    }
+
     public AppOperation(String id) {
         this.id = id;
     }

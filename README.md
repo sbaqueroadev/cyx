@@ -42,6 +42,20 @@ http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.h
 
 Run in terminal
 
+create a database in mongo:
+
+* first enter to mongo terminal service:
+
+```
+mongo
+```
+
+* then create the database:
+
+```
+use cyxtera
+```
+
 ```
 mvn spring-boot:run
 ```

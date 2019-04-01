@@ -17,7 +17,10 @@ public abstract class AppOperation{
     @Id
     private String id;
 
-    public AppOperation() {
+    private String name;
+
+    public AppOperation(String id) {
+        this.id = id;
     }
 
     public abstract Integer calculate(List<Integer> numbers) throws OperandsException;

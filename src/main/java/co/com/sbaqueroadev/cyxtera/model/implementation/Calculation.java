@@ -50,7 +50,7 @@ public class Calculation {
 	}
 
 	public Integer calculate() throws OperandsException {
-		return getAppOperation().calculate(getNumbers());
+		return getAppOperation()!=null?getAppOperation().calculate(getNumbers()):0;
 	}
 
 	public void addNumbers(List<Integer> numbers) {

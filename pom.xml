@@ -115,10 +115,10 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<!--<plugin>
+			<plugin>
 				<groupId>com.github.eirslett</groupId>
 				<artifactId>frontend-maven-plugin</artifactId>
-				<version>1.7</version>
+				<version>1.2</version>
 				<configuration>
 					<installDirectory>target</installDirectory>
 				</configuration>
@@ -150,7 +150,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			 end::frontend-maven-plugin[] -->
+			 <!-- end::frontend-maven-plugin[] -->
 		</plugins>
 	</build>
 </project>

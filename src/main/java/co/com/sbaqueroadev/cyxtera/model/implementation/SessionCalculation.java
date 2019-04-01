@@ -19,7 +19,6 @@ public class SessionCalculation {
     @DBRef
     private ApplicationUser applicationUser;
     @DBRef
-    @JsonIgnore
     private List<Calculation> calculations = new ArrayList<>();
 
     public SessionCalculation() {
@@ -53,15 +52,7 @@ public class SessionCalculation {
         if(this.calculations == null){
             this.calculations = new ArrayList<>();
         }
-        final Calculation[] calculations1 = this.calculations != null ? this.calculations.stream().toArray(Calculation[]::new): new Calculation[]{};
-        Arrays.stream(calculations).distinct().forEach(inputCalculation -> {
-            Stream<Calculation> result = Arrays.stream(calculations1).filter(calculation ->
-                inputCalculation.equals(calculation)
-            );
-            if(!(result.toArray().length>0)){
-                SessionCalculation.this.calculations.add(inputCalculation);
-            }
-        });
+        this.calculations.addAll(Arrays.asList(calculations));
     }
 
     public void removeCalculation(Calculation... calculations) {

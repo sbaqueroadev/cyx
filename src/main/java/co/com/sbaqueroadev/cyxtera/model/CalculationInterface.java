@@ -36,7 +36,7 @@ public interface CalculationInterface {
 
 	Calculation addOperation(Calculation calculation, AppOperation operation) throws OperationException;
 
-	void addNumbers(Calculation calculation, List<Integer> numbers);
+	Calculation addNumbers(Calculation calculation, List<Integer> numbers);
 
 	void update(CalculationData calculationData);
 }

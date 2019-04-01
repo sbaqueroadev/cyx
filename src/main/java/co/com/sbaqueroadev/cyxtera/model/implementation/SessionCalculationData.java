@@ -1,6 +1,7 @@
 package co.com.sbaqueroadev.cyxtera.model.implementation;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import org.springframework.context.annotation.Scope;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
@@ -13,11 +14,24 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-@Component
-@Scope("session")
 public class SessionCalculationData extends SessionCalculation{
+
+    private Integer result = 0;
 
     public SessionCalculationData() {
     }
 
+    public Integer getResult() {
+        return result;
+    }
+
+    public void setResult(Integer result) {
+        this.result = result;
+    }
+
+    @Override
+    @JsonInclude
+    public List<Calculation> getCalculations() {
+        return super.getCalculations();
+    }
 }

@@ -52,6 +52,6 @@ public class Calculation {
 	}
 
 	public void addNumbers(List<Integer> numbers) {
-		this.numbers.addAll(numbers);
+		this.numbers.addAll(this.numbers.size(),numbers);
 	}
 }

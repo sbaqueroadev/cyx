@@ -17,7 +17,7 @@ public class Addition extends AppOperation {
 
     @JsonInclude
     public String getName(){
-        return "Adition";
+        return "Addition";
     }
 
     @Override

@@ -69,16 +69,17 @@ public class CalculationService implements CalculationInterface {
 	    if(calculation.getAppOperation() != null){
 	        throw new OperationException("You need to add more operands to create a new operation");
         }
-        if(calculation.getNumbers() != null || calculation.getNumbers().size() == 0){
-            throw new OperationException("You need to operands to create this operation");
+        if(calculation.getNumbers() != null && calculation.getNumbers().size() == 0){
+            throw new OperationException("You need to add operands to create this operation");
         }
         calculation.setAppOperation(operation);
         return calculation;
     }
 
     @Override
-    public void addNumbers(Calculation calculation, List<Integer> numbers) {
+    public Calculation addNumbers(Calculation calculation, List<Integer> numbers) {
         calculation.addNumbers(numbers);
+        return calculation;
     }
 
     @Override

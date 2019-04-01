@@ -1,10 +1,20 @@
 package co.com.sbaqueroadev.cyxtera.model.implementation.operation;
 
 import co.com.sbaqueroadev.cyxtera.exceptions.OperandsException;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
 public class Division extends AppOperation {
+
+    public Division(String id) {
+        super(id);
+    }
+
+    @JsonInclude
+    public String getName(){
+        return "Division";
+    }
 
     @Override
     public Integer calculate(List<Integer> numbers) throws OperandsException {

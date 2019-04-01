@@ -15,10 +15,7 @@
 package co.com.sbaqueroadev.cyxtera.model;
 
 import co.com.sbaqueroadev.cyxtera.exceptions.OperandsException;
-import co.com.sbaqueroadev.cyxtera.model.implementation.Calculation;
-import co.com.sbaqueroadev.cyxtera.model.implementation.Role;
-import co.com.sbaqueroadev.cyxtera.model.implementation.SessionCalculation;
-import co.com.sbaqueroadev.cyxtera.model.implementation.SessionCalculationData;
+import co.com.sbaqueroadev.cyxtera.model.implementation.*;
 
 /*
 * @author: gasdsba - sbaqueroa@gmail.com
@@ -33,4 +30,6 @@ public interface SessionCalculationInterface {
 	Integer calculateResult(SessionCalculation sessionCalculation) throws OperandsException;
 
 	void update(SessionCalculationData sessionData);
+
+    SessionCalculation updateLastCalculation(SessionCalculation sessionCalculation, Calculation calculation);
 }

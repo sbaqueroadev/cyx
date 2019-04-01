@@ -547,13 +547,38 @@ public class SessionCalculationService implements SessionCalculationInterface {
                 numbers.add(0, result);
                 item.setNumbers(numbers);
             }
-            result = item.calculate();
+            System.out.println("RESULT:   " + result);
+            if(item.getAppOperation()!=null){
+                System.out.println("OPERATION:   " + item.getAppOperation().getClass().getName());
+                result = item.calculate();
+            }
+            if (index++ > 0) {
+                List<Integer> numbers = item.getNumbers();
+                numbers.remove(0);
+                item.setNumbers(numbers);
+            }
+            System.out.println("RESULT:   " + result);
         }
+        System.out.println("RESULT:   " + result);
         return result;
     }
 
     @Override
     public void update(SessionCalculationData sessionData) {
         sessionCalculationRepository.save(sessionData);
+    }
+
+    @Override
+    public SessionCalculation updateLastCalculation(SessionCalculation sessionCalculation, Calculation calculation) {
+        List<Calculation> calcs = sessionCalculation.getCalculations();
+        if(calcs.size()>0) {
+            calcs.set(sessionCalculation.getCalculations().size() - 1, calculation);
+            System.out.println("OPERATION UPDATE:   " + calcs.get(calcs.size()-1).getAppOperation().getClass().getName());
+        }else{
+            calcs.add(calculation);
+            System.out.println("OPERATION CREATE:   " + calcs.get(calcs.size()-1).getAppOperation().getClass().getName());
+        }
+        sessionCalculation.setCalculations(calcs);
+        return sessionCalculation;
     }
 }

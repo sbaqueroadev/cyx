@@ -10,13 +10,11 @@ class RouterTab extends React.Component{
         super();
     }
 
+    //<li><a href="../logout">Cerrar Sesión</a></li>-->
     render(){
-        const { rol } = this.state;
         let options;
         options = <ul className="nav navbar-nav">
-                    <li><a href="../logout">Cerrar Sesión</a></li>
-                  </ul>
-        }
+                  </ul>;
         
         return(
              <nav className="navbar navbar-inverse navbar-fixed-top">
@@ -29,7 +27,7 @@ class RouterTab extends React.Component{
                             <span className="icon-bar"></span>
                             <span className="icon-bar"></span>
                         </button>
-                        <a className="navbar-brand" href="#">Lecturas para tu salud</a>
+                        <a className="navbar-brand" href="#">Calculator</a>
                     </div>
                     <div id="navbar" className="collapse navbar-collapse">
                         {options}

@@ -2,6 +2,8 @@ package co.com.sbaqueroadev.cyxtera.model.implementation;
 
 import co.com.sbaqueroadev.cyxtera.exceptions.OperandsException;
 import co.com.sbaqueroadev.cyxtera.model.implementation.operation.AppOperation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -15,11 +17,7 @@ public class Calculation {
 	@Id
 	private String id;
 	private List<Integer> numbers = new ArrayList<>();
-    @DBRef
     private AppOperation appOperation;
-    //@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-
-	//private static final SimpleDateFormat sf = new SimpleDateFormat("dd-MM-yyyy");
 
 	public String getId() {
 		return this.id;

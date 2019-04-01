@@ -42,7 +42,7 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 	private CustomAuthenticationFailureHandler authenticationFailureHandler = 
 			new CustomAuthenticationFailureHandler("/users.html/access?error=100");
 	private CustomLoginSuccessHandler authenticationSuccessHandler = 
-			new CustomLoginSuccessHandler("/student/home");
+			new CustomLoginSuccessHandler("/home");
 
 	public JWTAuthenticationFilter(AuthenticationManager authenticationManager) {
 		this.authenticationManager = authenticationManager;

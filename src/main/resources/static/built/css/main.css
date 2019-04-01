@@ -1,0 +1,46 @@
+.calendar-option:hover{
+    background-color: rgba(12, 17, 155,0.6);
+}
+
+.calendar-option.selected{
+    background-color: rgba(83, 175, 1,0.6);
+}
+.calendar-option.selected:hover{
+    background-color: rgba(137, 137, 140,0.6);
+}
+
+.table.table-striped .pacient-selected{
+    background-color: rgba(137, 137, 140,0.6);
+}
+
+.table.table-striped .ill-selected{
+    background-color: rgba(137, 137, 140,0.6);
+}
+
+.table.table-striped .ill{
+    background-color: rgba(255,255,255,1);
+}
+
+.table.table-striped .pacient{
+    background-color: rgba(255,255,255,1);
+}
+
+.content{
+    padding-top: 70px;
+}
+
+.measure-info{
+    
+}
+
+.report-cell-orange{
+    background-color: orange;
+}
+
+.report-cell-green{
+    background-color: green;
+}
+
+.report-cell-red{
+    background-color: red;
+}

@@ -20,8 +20,8 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.9</java.version>
-		<start-class>co.com.sbaqueroadev.cyxtera.Application</start-class>
+		<java.version>1.8</java.version>
+		<start-class>co.com.sbaqueroadev.cyxtera.CyxteraTestApplication</start-class>
 	</properties>
 
 	<dependencies>
@@ -75,7 +75,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
+			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -92,8 +92,14 @@
 			<artifactId>jaxb-api</artifactId>
 			<version>2.3.0</version>
 		</dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
 
-	</dependencies>
+    </dependencies>
 
 	<repositories>
 		<repository>
@@ -118,7 +124,7 @@
 			<plugin>
 				<groupId>com.github.eirslett</groupId>
 				<artifactId>frontend-maven-plugin</artifactId>
-				<version>1.7</version>
+				<version>1.2</version>
 				<configuration>
 					<installDirectory>target</installDirectory>
 				</configuration>
@@ -150,7 +156,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			<!-- end::frontend-maven-plugin[] -->
+			 <!-- end::frontend-maven-plugin[] -->
 		</plugins>
 	</build>
 </project>
